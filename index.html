@@ -1,139 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Você já pensou em atuar na área de Tecnologia mas nunca teve oportunidade? Então o Programa Formação Tech é para você!">
-    <meta name="keywords" content="Formação Tech, Itaú, Gama Academy, Inovação, Inclusão, PCD, Front End">
-    <meta name="author" content="Wagner Moreira">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de cadastro | Programa Formação Tech Itaú</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Formulário de cadastro</title>
+    <meta name="Altor" content="Wagner Moreira">
 </head>
 
-<body onload="limparFormulario()">
-    <header class="header">
-        <img src="assets/images/logo.jpg" alt="Logotipo do Itaú com fundo gradiente em laranja e a letra I ao centro com tom transparente em formato de arroba." />
-        <nav>
-            <h1>Programa Formação Tech Itaú</h1>
-            <span id="pcd">Edição Pessoas com Deficiência</span>
-        </nav>
+<body>
+    <H1>Seja bem-vindo ao sistema de cadastro</H1>
+    <p>Coloque todos seus dados de forma correta<p <br>
+    <header>
+        <main>
+            <form method="POST">
+                <fieldset>
+                    <legend>Coloque seus dados pessoais</legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" placeholder="Digite seu nome" name="nome" id="nome" required>
+                    <label for="sobrenome">Sobre nome:</label>
+                    <input type="text" name="sobrenome" placeholder="Digite Seu Sobre nome" id="sobrenome" required>
+                    <label for="rg">RG</label>
+                    <input type="text" name="rg" maxlength="13" id="rg" placeholder="Coloque seu RG" required>
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" maxlength="11" placeholder="Digite Seu CPF" id="cpf" required>
+                    <label for="data">Data de Nascimento:</label>
+                    <input type="date" name="data" id="data" required>
+                    <label for="estadocivil">Estado Civil:</label>
+                    <select name="estadocivil" id="estadocivil">
+                        option>selecione</option value="00">
+                        <option>Solteiro (a)</option value="01">
+                        <option>Casado (a)</option value="02">
+                        <option>Outros</option value="03">
+                    </select>
+                    <label for="telfixo">Telefone fixo:</label>
+                    <input type="tel" name="telfixo" id="telfixo">
+                    <label for="celular">Telefone celular:</label>
+                    <input type="tel" name="celular" id="celular" required>
+                </fieldset>
+                <br>
+                <fieldset>
+                <legend>Sexo</legend>
+                <label for"sf">Feminino</label>
+                <input type="radio" name="sexo" id="sf" value="f">
+                <br>
+                <label for="sm">Masculino</label>
+                <input type="radio" name="sexo" id="sm" value="m">
+                <fieldset>
+                    <br>
+                </fieldset>
+                <h2>Endereço</h2>
+                </legend><br>
+                <label for="cep">
+                    <h3>CEP: <sup>*</sup></h3>
+                </label><br>
+                <input id="cep" type="text" name="cep" maxlength="9" onblur="pesquisacep(this.value);" onkeydown="javascript: mascaraInputsNumericos(this, mascaraCep);" pattern="[0-9]{5}-[0-9]{3}+" required="required" />
+                <br>
+                <label for="logradouro">
+                    <h3>Logradouro: <sup>*</sup></h3>
+                </label><br>
+                <input id="logradouro" type="text" name="logradouro" size="30" maxlength="28" placeholder="Informe o seu endereço" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
+                <br>
+                <label for="numero">
+                    <h3>Nº: <sup>*</sup></h3>
+                </label><br>
+                <input id="numero" type="text" name="numero" size="7" maxlength="7" placeholder="Número" onkeydown="javascript: mascaraInputsNumericos(this, mascaraNumero);" required="required" />
+                <br>
+                <label for="complemento">
+                    <h3>Complemento:</h3>
+                </label><br>
+                <input id="complemento" type="text" name="complemento" size="30" maxlength="28" placeholder="Informe um complemento" title="Alguns caractéres especiais não são aceitos neste campo"pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
+                <br>
+                <label for="bairro">
+                    <h3>Bairro: <sup>*</sup></h3>
+                </label><br>
+                <input id="bairro" type="text" name="bairro" size="30" maxlength="28" placeholder="Informe o seu bairro!" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" required="required" />
+                <br>
+                <label for="cidade">
+                    <h3>Cidade: <sup>*</sup></h3>
+                </label><br>
+                <input id="cidade" type="text" name="cidade" size="30" maxlength="30" placeholder="Nome da cidade" readonly required="required" />
+                <br>
+                <label for="estado">
+                    <h3>Estado: <sup>*</sup></h3>
+                </label><br>
+                <input id="estado" type="text" name="estado" size="2" maxlength="2" placeholder="UF" readonly required="required" />
+                </fieldset>
+
+                <label for="privacidade">
+                    <input id="privacidade" type="checkbox" name="privacidade" autocomplete="off" />Ao clicar em
+                    cadastrar, concordo em compartilhar os meus dados.
+                </label>
+                <input type="submit" name="enviar" onclick="pergunta1();" value="Enviar">
+                <input type="reset" onclick="pergunta2();" value="Limpar">
+                <br>
+                <br>
+
+                <div class="form-button">
+                </div>
+            </form>
+            <script type="text/javascript" src="assets/js/script.js"></script>
+            <script>
+                function pergunta1() {
+                if (confirm("Deseja enviar agora?")) {
+                return true;
+              }
+                else {
+                return false;
+              }
+              }
+                          
     </header>
-    <main>
-        <section>
-
-            <h2>Participe do programa de capacitação<br>feito para você! Cadastre-se!</h2>
-
-            <div class="form-container">
-                <form id="formulario">
-                    <fieldset>
-                        <legend>
-                            <h3>Dados pessoais</h3>
-                        </legend>
-                        <br>
-                        <label for="nome"><h4>Nome: <sup>*</sup></h4></label><br>
-                        <input id="nome" type="text" name="nome" size="30" maxlength="28" placeholder="Digite o seu nome" title="Alguns caractéres especiais não são aceitos neste campo" pattern="[A-z çáàâãäéèêëiìóòôõöúùûüýÿ]+" required="required" />
-                        <br>
-                        <label for="sobrenome"><h4>Sobrenome: <sup>*</sup></h4></label><br>
-                        <input id="sobrenome" type="text" name="sobrenome" size="30" maxlength="28" placeholder="Digite o seu sobrenome" title="Alguns caracteres especiais não são aceitos neste campo" pattern="[A-z çáàâãäéèêëiìóòôõöúùûüýÿ]+" required="required" />
-                        <br>
-                        <label for="cpf"><h4>CPF: <sup>*</sup></h4></label><br>
-                        <input id="cpf" type="text" name="cpf" size="16" maxlength="14" placeholder="___.___.___-__" title="Campo somente números" onblur="verificarCpf(this)" onkeydown="javascript: mascaraInputsNumericos(this, mascaraCpf);" required="required" />
-                        <br>
-                        <label for="rg"><h4>RG:</h4></label><br>
-                        <input id="rg" type="text" name="rg" size="22" maxlength="22" placeholder="___.___.___-_ (2ª via)" title="Alguns caractéres especiais não são aceitos neste campo" pattern="[A-u0-9 .-ªº()]+" />
-                        <br>
-                        <h4>Sexo:</h4>
-                        <label for="feminino">
-								<input id="feminino" type="radio" name="sexo" value="feminino" />Feminino
-							</label>
-                        <br>
-                        <label for="masculino">
-								<input id="masculino" type="radio" name="sexo" value="masculino" />Masculino
-							</label>
-                        <br>
-                        <label for="prefiro-nao-informar">
-								<input id="prefiro-nao-informar" type="radio" name="sexo" value="prefiro nao informar" />Prefiro não informar
-							</label>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>
-                            <h3>Informações de contato</h3>
-                        </legend>
-                        <br>
-                        <label for="email"><h4>E-mail: <sup>*</sup></h4></label><br>
-                        <input id="email" type="email" name="email" size="30" maxlength="28" placeholder="email@exemplo.com.br" title="Use somente letras minúsculas, ponto, @, -, _, e %!" pattern="[a-z_.@%-]+" required="required" />
-                        <br>
-                        <label for="celular"><h4>Telefone celular: <sup>*</sup></h4></label><br>
-                        <input id="celular" type="tel" name="celular" size="16" maxlength="15" placeholder="(__) _____-____" title="Digite somente números" onkeydown="javascript: mascaraInputsNumericos(this, mascaraCelular);" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required="required"
-                        />
-                        <br>
-                        <label for="telefone"><h4>Telefone fixo:</h4></label><br>
-                        <input id="telefone" type="tel" name="telefone" size="16" maxlength="14" placeholder="(__) ____-____" title="Digite somente números" onkeydown="javascript: mascaraInputsNumericos(this, mascaraTelefone);" pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}" />
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>
-                            <h3>Endereço</h3>
-                        </legend><br>
-                        <label for="cep"><h4>CEP: <sup>*</sup></h4></label><br>
-                        <input id="cep" type="text" name="cep" size="10" maxlength="9" placeholder="_____-___" title="Digite somente números" onblur="pesquisacep(this.value);" onkeydown="javascript: mascaraInputsNumericos(this, mascaraCep);" pattern="[0-9]{5}-[0-9]{3}+" required="required"
-                        />
-                        <br>
-                        <label for="logradouro"><h4>Logradouro: <sup>*</sup></h4></label><br>
-                        <input id="logradouro" type="text" name="logradouro" size="30" maxlength="28" placeholder="Informe o seu endereço!" title="Alguns caractéres especiais não são aceitos neste campo" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
-                        <br>
-                        <label for="numero"><h4>Nº: <sup>*</sup></h4></label><br>
-                        <input id="numero" type="text" name="numero" size="7" maxlength="7" placeholder="Número" title="Digite somente números" onkeydown="javascript: mascaraInputsNumericos(this, mascaraNumero);" required="required" />
-                        <br>
-                        <label for="complemento"><h4>Complemento:</h4></label><br>
-                        <input id="complemento" type="text" name="complemento" size="30" maxlength="28" placeholder="Inform um complemento!" title="Alguns caractéres especiais não são aceitos neste campo" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
-                        <br>
-                        <label for="bairro"><h4>Bairro: <sup>*</sup></h4></label><br>
-                        <input id="bairro" type="text" name="bairro" size="30" maxlength="28" placeholder="Informe o seu bairro!" title="Alguns caractéres especiais não são aceitos neste campo" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" required="required" />
-                        <br>
-                        <label for="cidade"><h4>Cidade: <sup>*</sup></h4></label><br>
-                        <input id="cidade" type="text" name="cidade" size="30" maxlength="30" placeholder="Nome da cidade" readonly required="required" />
-                        <br>
-                        <label for="estado"><h4>Estado: <sup>*</sup></h4></label><br>
-                        <input id="estado" type="text" name="estado" size="2" maxlength="2" placeholder="UF" readonly required="required" />
-                    </fieldset>
-
-                    <label for="privacidade">
-						<input id="privacidade" type="checkbox" name="privacidade" autocomplete="off" />Ao clicar em cadastrar, concordo em compartilhar os meus dados.
-						</label>
-                    <br>
-                    <br>
-
-                    <div class="form-button">
-                        <input id="cadastrar" type="submit" value="Cadastrar" onclick="checarCamposObrigatorios()" autocomplete="off" disabled />
-                        <input type="reset" value="Limpar campos" onclick="resetSubmit()" />
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    <br>
-    <footer class="footer">
-        <div class="copyright">
-            &#169; 2021 - Wagner Moreira
-        </div>
-        <ul class="footer-links">
-            <li>
-                <a title="Programa Formação Tech itaú" target="_blank" href="https://itautech.gama.academy/">Programa Formação Tech Itaú</a></li>
-            <li> | </li>
-            <li><a title="Gama Academy" target="_blank" href="https://www.gama.academy/">Gama Academy</a></li>
-            <li> | </li>
-            <li><a title="Wagner Moreira no Linkedin" target="_blank" href="https://www.linkedin.com/in/Wagnermoreira">Linkedin</a></li>
-            <li> | </li>
-            <li><a title="Wagner Moreira no GitHub" target="_blank" href="https://github.com/wagnermoreira">GitHub</a></li>
-
-        </ul>
-    </footer>
-    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
 </html>
