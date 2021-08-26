@@ -1,117 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de cadastro</title>
-    <meta name="Altor" content="Wagner Moreira">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cadastro pessoal</title>
+    </head>
 
-<body>
-    <H1>Seja bem-vindo ao sistema de cadastro</H1>
-    <p>Coloque todos seus dados de forma correta<p <br>
-    <header>
-        <main>
-            <form method="POST">
-                <fieldset>
-                    <legend>Coloque seus dados pessoais</legend>
-                    <label for="nome">Nome:</label>
-                    <input type="text" placeholder="Digite seu nome" name="nome" id="nome" required>
-                    <label for="sobrenome">Sobre nome:</label>
-                    <input type="text" name="sobrenome" placeholder="Digite Seu Sobre nome" id="sobrenome" required>
-                    <label for="rg">RG</label>
-                    <input type="text" name="rg" maxlength="13" id="rg" placeholder="Coloque seu RG" required>
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf" maxlength="11" placeholder="Digite Seu CPF" id="cpf" required>
-                    <label for="data">Data de Nascimento:</label>
-                    <input type="date" name="data" id="data" required>
-                    <label for="estadocivil">Estado Civil:</label>
-                    <select name="estadocivil" id="estadocivil">
-                        option>selecione</option value="00">
-                        <option>Solteiro (a)</option value="01">
-                        <option>Casado (a)</option value="02">
-                        <option>Outros</option value="03">
-                    </select>
-                    <label for="telfixo">Telefone fixo:</label>
-                    <input type="tel" name="telfixo" id="telfixo">
-                    <label for="celular">Telefone celular:</label>
-                    <input type="tel" name="celular" id="celular" required>
-                </fieldset>
-                <br>
-                <fieldset>
-                <legend>Sexo</legend>
-                <label for"sf">Feminino</label>
-                <input type="radio" name="sexo" id="sf" value="f">
-                <br>
-                <label for="sm">Masculino</label>
-                <input type="radio" name="sexo" id="sm" value="m">
-                <fieldset>
-                    <br>
-                </fieldset>
-                <h2>Endereço</h2>
-                </legend><br>
-                <label for="cep">
-                    <h3>CEP: <sup>*</sup></h3>
-                </label><br>
-                <input id="cep" type="text" name="cep" maxlength="9" onblur="pesquisacep(this.value);" onkeydown="javascript: mascaraInputsNumericos(this, mascaraCep);" pattern="[0-9]{5}-[0-9]{3}+" required="required" />
-                <br>
-                <label for="logradouro">
-                    <h3>Logradouro: <sup>*</sup></h3>
-                </label><br>
-                <input id="logradouro" type="text" name="logradouro" size="30" maxlength="28" placeholder="Informe o seu endereço" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
-                <br>
-                <label for="numero">
-                    <h3>Nº: <sup>*</sup></h3>
-                </label><br>
-                <input id="numero" type="text" name="numero" size="7" maxlength="7" placeholder="Número" onkeydown="javascript: mascaraInputsNumericos(this, mascaraNumero);" required="required" />
-                <br>
-                <label for="complemento">
-                    <h3>Complemento:</h3>
-                </label><br>
-                <input id="complemento" type="text" name="complemento" size="30" maxlength="28" placeholder="Informe um complemento" title="Alguns caractéres especiais não são aceitos neste campo"pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" />
-                <br>
-                <label for="bairro">
-                    <h3>Bairro: <sup>*</sup></h3>
-                </label><br>
-                <input id="bairro" type="text" name="bairro" size="30" maxlength="28" placeholder="Informe o seu bairro!" pattern="[A-z0-9 çáàâãäéèêëiìóòôõöúùûüýÿ,.-ªº()]+" required="required" />
-                <br>
-                <label for="cidade">
-                    <h3>Cidade: <sup>*</sup></h3>
-                </label><br>
-                <input id="cidade" type="text" name="cidade" size="30" maxlength="30" placeholder="Nome da cidade" readonly required="required" />
-                <br>
-                <label for="estado">
-                    <h3>Estado: <sup>*</sup></h3>
-                </label><br>
-                <input id="estado" type="text" name="estado" size="2" maxlength="2" placeholder="UF" readonly required="required" />
-                </fieldset>
+    <style>
 
-                <label for="privacidade">
-                    <input id="privacidade" type="checkbox" name="privacidade" autocomplete="off" />Ao clicar em
-                    cadastrar, concordo em compartilhar os meus dados.
-                </label>
-                <input type="submit" name="enviar" onclick="pergunta1();" value="Enviar">
-                <input type="reset" onclick="pergunta2();" value="Limpar">
-                <br>
-                <br>
+        /* Expandir o corpo de HTML e body para 100% da altura e largura a fim de centralizar o formulário */
+        html, body
+        {
+            margin: 0;
+            height: 100%;
+        }
+        
+        /* EStilizar o corpo, e configurar a gride para body a fim de centralizar o container */
+        body 
+        {
+            background-color: bisque;
+            color: black;
+            display: grid;
+            font-family: Calibri;
+            align-items: center;
+            justify-items: center;
+        }
 
-                <div class="form-button">
-                </div>
-            </form>
-            <script type="text/javascript" src="assets/js/script.js"></script>
-            <script>
-                function pergunta1() {
-                if (confirm("Deseja enviar agora?")) {
-                return true;
-              }
-                else {
-                return false;
-              }
-              }
-                          
-    </header>
-</body>
+        /* Centralizar verticalmente e limitar a largura fixa para que as pessoas possam ver no centro sem olhar para os lados */
+        .container
+        {
+            background-color: whitesmoke;
+            margin: 0 auto;
+            max-width: 620px;
+            padding: 30px;
+        }
+
+        /* Centralizar o grupo de texto e de formulário */
+        .grupo
+        {
+            display: grid;
+            justify-content: center;
+        }
+
+        /* Maximizar até 420px para sentir-se mais lógico e centralizá-lo a fim de distinguir o texto e o formulário */
+        form 
+        {
+            margin: 0 auto;
+            width: 420px;
+        }
+
+        /* Aumentar o tamanho dos parágrafos */
+        p 
+        {
+            font-size: 16px;
+        }
+
+        /* Agrupar duas caixas de entradas numa única linha */
+        .form-group {
+            display: flex;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Agrupar três caixas de entradas numa mesma linha */
+        .col-3 {
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr 50px;
+        }
+
+        /* Aumentar o tamanho do grupo de etiqueta e caixa de entrada para distinguir */
+        .form-input {
+            padding: 5px;
+        }
+
+        /* Agrupar a etiqueta e a caixa de seleção, configurando a largura de etiqueta e de caixa de seleção */
+        .form-sex {
+            display: grid;
+            grid-template-columns: 97px 100px;
+        }
+
+        /* Com o seletor "form-input", expandir todas as caixas até à largura do grupo para que elas tenham largura igual */
+        input,
+        select {
+            width: 100%;
+        }
+
+        /* Alinhar as etiquetas para a esquerda */
+        label {
+            float: left;
+            clear: left;
+        }
+
+        /* Estilizar o botão de submissão */
+        input[type="submit"] {
+            background-color: navy;
+            border: 0;
+            color: whitesmoke;
+            display: block;
+            margin: 10px auto;
+            outline: none;
+            padding: 5px;
+            width: 120px;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <div class="grupo">
+                <h1>Cadastro Pessoal</h1>
+                <p>Por favor, preencha todos os campos obrigatórios.</p>
+
+                <!-- O método "onsumbit" checa se todos os campos estão preenchidos -->
+                <form onsubmit="sucesso()">
+
+                    <!-- Agrupar as caixas numa mesma linha -->
+                    <div class="form-group">
+                        <div class="form-input">
+
+                            <!-- A etiqueta "label" é importante para pessoas com deficiência visual e com leitor de tela -->
+                            <label for="nome">Nome</label><br>
+                            <!-- input é uma caixa de entrada, type é um tipo de caixa e required indica que é requerido, id é um identificador checado pela etiqueta "label" -->
+                            <input type="text" required="" id="nome" />
+                        </div>
+                        <div class="form-input">
+                            <label for="sobrenome">Sobre</label><br>
+                            <input type="text" required="" id="nome" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-input">
+                            <label for="cpf">CPF</label><br>
+                            <input id="cpf" placeholder="Digite apenas números" required="numbers" maxlength="11" pattern="[0-9]+$" />
+                        </div>
+                        <div class="form-input">
+                            <label for="rg">RG</label><br>
+                            <input type="text" placeholder="Digite apenas números" maxlenght="14" id="rg">
+                        </div>
+                    </div>
+                    <div class="form-input form-sex">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo">
+                            <option value="f">Feminino</option>
+                            <option value="m">Masculino</option>
+                        </select>
+                    </div>
+                    <div>
+                    <div class="form-input">
+                        <label for="cep">CEP</label><br>
+                        <input type="text" placeholder="Digite apenas números" required="numbers" id="cep" />
+                        <button type="button" onclick="carregaEndereco()">clique para completar os campos de endereço</button>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-input">
+                            <label for="endereco">Endereço</label><br>
+                            <input type="text" required="required" readonly id="endereco" />
+                        </div>
+                        <div class="form-input">
+                            <label for="numero">Número de casa</label><br>
+                            <input type="text" required="numbers" maxlenght="5" id="numero" />
+                        </div>
+                    </div>
+                    <div class="form-group col-3">
+                        <div class="form-input">
+                            <label for="bairro">Bairro</label><br>
+                            <input type="text" id="bairro" readonly />
+                        </div>
+                        <div class="form-input">
+                            <label for="cidade">Cidade</label><br>
+                            <input type="text" id="cidade" readonly />
+                        </div>
+                        <div class="form-input">
+                            <label for="estado">Estado</label><br>
+                            <input type="text" id="estado" readonly />
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-input">
+                            <label for="fixo">Telefone fixo</label><br>
+                            <input type="text" id="fixo" maxlength="11" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$" placeholder="Digite apenas números" />
+                        </div>
+                        <div class="form-input">
+                            <label for="cel">Celular</label><br>
+                            <input id="cel" type="text" required="numbers" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$" placeholder="Digite apenas números" />
+                        </div>
+                    </div>
+                    <input type="submit" id="cadastrar" value="Enviar dados" />
+                </form>
+            </div>
+        </div>
+
+        <!-- Anexar um arquivo externo em JavaScript -->
+        <script type="text/javascript" src="js/script.dev.js"></script>
+    </body>
 
 </html>
