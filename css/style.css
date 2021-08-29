@@ -1,0 +1,104 @@
+
+
+/* Expandir o corpo de HTML e body para 100% da altura e largura a fim de centralizar o formulário */
+html,
+body
+{
+  height: 100%;
+  margin: 0;
+}
+
+/* EStilizar o corpo, e configurar a gride para body a fim de centralizar o container */
+body
+{
+  align-items: center;
+  background-color: bisque;
+  color: black;
+  display: grid;
+  font-family: Calibri;
+  justify-items: center;
+}
+
+/* Centralizar verticalmente e limitar a largura fixa para que as pessoas possam ver no centro sem olhar para os lados */
+.container
+{
+  background-color: whitesmoke;
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 30px;
+}
+
+/* Centralizar o grupo de texto e de formulário */
+.grupo
+{
+  display: grid;
+  justify-content: center;
+}
+
+/* Maximizar até 420px para sentir-se mais lógico e centralizá-lo a fim de distinguir o texto e o formulário */
+form
+{
+  margin: 0 auto;
+  width: 420px;
+}
+
+/* Aumentar o tamanho dos parágrafos */
+p
+{
+  font-size: 16px;
+}
+
+/* Agrupar duas caixas de entradas numa única linha */
+.form-group
+{
+  display: flex;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Agrupar três caixas de entradas numa mesma linha */
+.col-3
+{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 50px;
+}
+
+/* Aumentar o tamanho do grupo de etiqueta e caixa de entrada para distinguir */
+.form-input
+{
+  padding: 5px;
+}
+
+/* Agrupar a etiqueta e a caixa de seleção, configurando a largura de etiqueta e de caixa de seleção */
+.form-sex
+{
+  display: grid;
+  grid-template-columns: 97px 100px;
+}
+
+/* Com o seletor "form-input", expandir todas as caixas até à largura do grupo para que elas tenham largura igual */
+input,
+select
+{
+  width: 100%;
+}
+
+/* Alinhar as etiquetas para a esquerda */
+label
+{
+  clear: left;
+  float: left;
+}
+
+/* Estilizar o botão de submissão */
+input[type="submit"]
+{
+  background-color: navy;
+  border: 0;
+  color: whitesmoke;
+  display: block;
+  margin: 10px auto;
+  outline: none;
+  padding: 5px;
+  width: 120px;
+}
