@@ -76,11 +76,11 @@ Nele, temos:
 
 #### Fim
 
-O comando `<button type="button" onclick="validarCEP()">Checar a validade do CEP</button>` é um botão com um evento "onclick" que executa a função "validarCEP()" para checar se CEP é válido ou não. 
+O comando `<button type="button" onclick="carregarEndereco()">Clique para carregar os campos do endereço</button>` é um botão com um evento "onclick" que executa a função "carregarEndereco()" para checar se CEP é válido ou não e também preencher todos os campos de forma automática. 
 
 O comando `<input id="cadastrar" type="submit" value="Enviar dados">` é um botão de submissão com um valor para renderizar
 
-O comando `<script src="assets/js/script-2.js" type="text/javascript"></script>` é elemento para anexar o arquivo externo em JavaScript e define o tipo de documento
+O comando `<script type="text/javascript" src="js/script.dev.js"></script>` é elemento para anexar o arquivo externo em JavaScript e define o tipo de documento
 
 ### JavaScript
 
