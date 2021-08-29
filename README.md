@@ -55,14 +55,14 @@ Além disso, numa divisão, temos:
 
 #### Formulário
 
-O `<form>` é um elemento de criação de formulário usado para onde o usuário possa preencher os campos. Nele, tem um atributo "`onsumbit`" é um evento de submissão em JavaScript que executa a função. Dentro do formulário, definimos as classes `grupo-de-caixa` para agrupar o rótulo e o campo para uma mesma linha e expandir a largura do campo até à largura da classe "`descricao`".
+O `<form>` é um elemento de criação de formulário usado para onde o usuário possa preencher os campos. Nele, tem um atributo "`onsubmit`" é um evento de submissão em JavaScript que executa a função. Dentro do formulário, definimos as classes `grupo-de-caixa` para agrupar o rótulo e o campo para uma mesma linha e expandir a largura do campo até à largura da classe "`descricao`".
 
 Nele, temos:
 
 ##### Rótulos
 
 - O `<label>` é um elemento que rotula a informação.
-  - O atriuto "`for`" é um método que pega o identificador do campo de entrada.
+  - O atributo "`for`" é um método que pega o identificador do campo de entrada.
 
 ##### Campos de entrada
 
@@ -76,7 +76,7 @@ Nele, temos:
 
 #### Fim
 
-O comando `<button type="button" onclick="carregarEndereco()">Clique para carregar os campos do endereço</button>` é um botão com um evento "onclick" que executa a função "carregarEndereco()" para checar se CEP é válido ou não e também preencher todos os campos de forma automática. 
+O comando `<button type="button" onclick="carregarEndereco()">Clique para carregar os campos do endereço</button>` é um botão com um evento "onclick" que executa a função "carregarEndereco()" para checar se CEP é válido ou não e também preencher todos os campos de endereço de forma automática. 
 
 O comando `<input id="cadastrar" type="submit" value="Enviar dados">` é um botão de submissão com um valor para renderizar
 
